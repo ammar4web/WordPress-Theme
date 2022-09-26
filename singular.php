@@ -1,2 +1,5 @@
 <?php
-    echo 'singular.php';
+get_header();
+
+get_footer();
+?>
