@@ -1,7 +1,7 @@
 <?php
 
 if (!function_exists('wpc_load_assets')) {
-  function  wpc_load_assets()
+  function wpc_load_assets()
   {
     // get_template_directory_uri()
     $base = get_template_directory_uri() . '/';
@@ -20,11 +20,9 @@ if (!function_exists('wpc_load_assets')) {
     wp_enqueue_script('wpc_bootstrap-script', $base . 'assets/js/bootstrap.min.js', [], false, true);
     wp_enqueue_script('wpc_custom-script', $base . 'assets/js/custom.js', [], false, true);
   }
+  // add_action()
+  // wp_enqueue_scripts
+  add_action('wp_enqueue_scripts', 'wpc_load_assets');
 } else {
   // notify the admin by sending emali for example
 }
-
-// --------------------------------------------------------------------------------------------------------
-// add_action()
-// wp_enqueue_scripts
-add_action('wp_enqueue_scripts', ' wpc_load_assets');
