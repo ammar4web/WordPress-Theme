@@ -16,6 +16,7 @@ if (!function_exists('wpc_load_assets')) {
 
     // wp_enqueue_script
     wp_enqueue_script('wpc_jq-script', $base . 'assets/js/jquery.min.js', [], false, true);
+    // wp_enqueue_script('jquery');
     wp_enqueue_script('wpc_tether-script', $base . 'assets/js/tether.min.js', [], false, true);
     wp_enqueue_script('wpc_bootstrap-script', $base . 'assets/js/bootstrap.min.js', [], false, true);
     wp_enqueue_script('wpc_custom-script', $base . 'assets/js/custom.js', [], false, true);
@@ -26,3 +27,16 @@ if (!function_exists('wpc_load_assets')) {
 } else {
   // notify the admin by sending emali for example
 }
+
+// لتبديل الجي كويري المستخدمة ب وورد برس
+// غير آمنة من حدوث مشاكل
+// if (!function_exists('wpc_redefine_assets')) {
+//   function wpc_redefine_assets()
+//   {
+//     //  wp_deregister_script() // تقوم بإلغاء التعريف
+//     wp_deregister_script('jquery');
+//     //  wp_register_script() // تقوم بالتعريف
+//     wp_register_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', [], '3.5.1');
+//   }
+//   add_action('wp_enqueue_scripts', 'wpc_redefine_assets');
+// }
