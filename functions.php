@@ -40,3 +40,17 @@ if (!function_exists('wpc_load_assets')) {
 //   }
 //   add_action('wp_enqueue_scripts', 'wpc_redefine_assets');
 // }
+
+if (!function_exists('wpc_setup')) {
+
+  //We write this function 
+  function wpc_setup()
+  {
+    // add_theme_support wordPress function
+    // post-thumbnails from WordPress
+    add_theme_support('post-thumbnails');
+  }
+  // add_action wordPress function
+  // after_setup_theme from WordPress
+  add_action('after_setup_theme', 'wpc_setup');
+}
